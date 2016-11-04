@@ -1,0 +1,33 @@
+small{
+	display: block;
+    color: #999999;
+    font-size: .65em;
+}
+
+.list-group-item p{
+	display: inline-block;
+}
+
+.btn{
+	margin-top: 1em;
+}
+
+.row{
+	margin-top: 5em;
+}
+
+h1{
+	margin: .5em 0 .5em 0;
+ }
+
+ a{
+
+    margin: .5em .5em 0 0;
+    font-size: .6em;
+ }
+
+.back{
+
+	margin: .7em;
+    display: inline-block;
+}
