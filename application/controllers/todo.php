@@ -1,7 +1,7 @@
 <?php
 
 class Todo extends CI_Controller{
-
+    
 	function __construct(){
 
 		parent::__construct();
@@ -12,17 +12,18 @@ class Todo extends CI_Controller{
 		$this->load->library('form_validation');
 	}
 
-
+//metoda na vypis vsetkych zaznamov zo zapisnika
 	function index() {
 		
 		$data = array( 'notes' =>  $this->todo_model->getNotes());
 		$this->load->view('todo_view',$data);
 		
 	}
-
+        
+//metoda na pridavanie noveho zaznamu, pouzit v pripade ak pouzivatel vypne JS v prehliadaci a nemoze nastat request cez ajax(dorobit!)
 	function add() {
 
-		
+            
 		$this->form_validation->set_rules('text','new post', 'trim|required|xss_clean');
 
 		if($this->form_validation->run()){
@@ -44,6 +45,7 @@ class Todo extends CI_Controller{
 		}
 	}
 
+//metoda na vybratie zaznamu ktroy chceme editovat        
 	function edit($id){
 
 		$data = array(
@@ -57,7 +59,8 @@ class Todo extends CI_Controller{
 
 
 	}
-
+        
+//metoda na update zaznamu po jeho editacii
 	function update($id){
 
 		$this->load->library('form_validation');
@@ -88,7 +91,8 @@ class Todo extends CI_Controller{
 		}
 
 	}
-
+        
+//metoda na mazanie zaznamov z zapisnika
 	function delete($id){
 
 		$data = array(
@@ -101,8 +105,7 @@ class Todo extends CI_Controller{
 
 	}
 
-
-//example for ajax request
+//metoda na pridavanie novych zaznamov do zapisnika cez ajax request
 	function ajax() {
 
 		$this->load->library('form_validation');

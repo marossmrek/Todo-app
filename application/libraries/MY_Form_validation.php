@@ -1,5 +1,6 @@
 <?php
 
+//rozsirenie kniznice form_validation o metodu zistujucu ci doslo k editacii(prerobit!)
 	class MY_form_validation extends CI_Form_validation{
 
 
